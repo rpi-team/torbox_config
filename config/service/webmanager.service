@@ -1,0 +1,10 @@
+[Unit]
+Description=Raspberri PI Web-interface
+
+[Service]
+ExecStart=/usr/bin/python3.5 /opt/app/main.py &
+ExecStop=killall python3.5
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

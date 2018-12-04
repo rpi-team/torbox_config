@@ -1,0 +1,11 @@
+[Unit]
+Description=3Proxy SOCKS Proxy
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/3proxy /etc/3proxy.cfg
+ExecStop=killall 3proxy
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
